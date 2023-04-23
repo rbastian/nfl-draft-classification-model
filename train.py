@@ -14,6 +14,7 @@ csv_files = [
     "./data/2020QBCSV.csv",
     "./data/2019QBCSV.csv",
     "./data/2018QBCSV.csv",
+    "./data/2017QBCSV.csv",
 ]
 data = pd.concat([pd.read_csv(file) for file in csv_files], ignore_index=True)
 
@@ -33,7 +34,7 @@ mlflow.set_experiment("NFL Draft Classifier Experiment")
 
 
 def run_experiment(params):
-    with mlflow.start_run(run_name="Logistic_Regression: Fix 2019 Errors"):
+    with mlflow.start_run(run_name="Logistic_Regression: add 2017"):
         classifier = LogisticRegression(**params)
         classifier.fit(X_train, y_train)
 
