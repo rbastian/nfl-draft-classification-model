@@ -34,7 +34,7 @@ mlflow.set_experiment("NFL Draft Classifier Experiment")
 
 
 def run_experiment(params):
-    with mlflow.start_run(run_name="Logistic_Regression: add 2017"):
+    with mlflow.start_run(run_name="Logistic_Regression: HyperOpt"):
         classifier = LogisticRegression(**params)
         classifier.fit(X_train, y_train)
 
@@ -57,6 +57,6 @@ def run_experiment(params):
         mlflow.sklearn.log_model(classifier, "model")
 
 
-params = {"solver": "liblinear", "C": 1.0}
-
+# params = {"solver": "liblinear", "C": 1.0}
+params = {"C": 5.857547348622668, "solver": "lbfgs", "penalty": "l2"}
 run_experiment(params)
