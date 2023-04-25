@@ -2,7 +2,7 @@ import mlflow
 import pandas as pd
 
 # MLFlow Run
-logged_model = "runs:/b9c84c239fee40e7ab3546c68f1bba26/model"
+logged_model = "runs:/951bd1d69b184405924d0314af777abf/model"
 
 # Load model as a PyFuncModel.
 loaded_model = mlflow.pyfunc.load_model(logged_model)
